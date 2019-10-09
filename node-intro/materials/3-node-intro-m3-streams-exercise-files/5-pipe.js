@@ -10,7 +10,8 @@ var request = require('request');
 
 // Version 3:  Pipe HTML to a file instead of standard out
 var fs = require('fs');
-request('http://www.pluralsight.com/').pipe(fs.createWriteStream('pluralsight.html'));
+// request('http://www.pluralsight.com/').pipe(fs.createWriteStream('pluralsight.html'));
 
 // Version 4:  Pipe HTML through a gzip stream to a compressed file
-//request('http://www.pluralsight.com/').pipe(zlib.createGzip()).pipe(fs.createWriteStream('pluralsight.html.gz'));
+var zlib = require('zlib');
+request('http://www.pluralsight.com/').pipe(zlib.createGzip()).pipe(fs.createWriteStream('pluralsight.html.gz'));
