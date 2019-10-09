@@ -1,4 +1,4 @@
-var request = require('request');
+import request from 'request';
 
 var s = request('http://www.pluralsight.com/');
 

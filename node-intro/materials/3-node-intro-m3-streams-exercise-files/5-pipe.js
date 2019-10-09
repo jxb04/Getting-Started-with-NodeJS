@@ -1,4 +1,4 @@
-var request = require('request');
+import request from 'request';
 
 // Version 1:  Pipe HTML to standard out
 var s = request('http://www.pluralsight.com/');
